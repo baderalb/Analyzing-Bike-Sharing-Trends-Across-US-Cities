@@ -10,8 +10,15 @@ CITY_DATA = {
     'washington': 'washington.csv'
 }
 
-# Spinning text animation class
+# Spinning text animation class for loading visuals
 class Spinner:
+     """
+        Animates a spinning text visual to simulate a loading spinner.
+
+        Args:
+            string (str): The text message to display during the spin.
+            iterations (int): Number of times the spinner will cycle through the animation.
+        """
     def spin(self, string, iterations):
         clear = "\b" * (8 + len(string))
         for _ in range(iterations):

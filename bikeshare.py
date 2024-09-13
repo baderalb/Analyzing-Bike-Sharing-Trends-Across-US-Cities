@@ -74,6 +74,8 @@ def load_data(city, month, day):
     Returns: df (Pandas DataFrame)
     """
     print("\nFilters applied: [{}]".format(", ".join([city, month, day]).center(78, '*')))
+    if city == 'washington':
+        print("Warning: Washington dataset lacks 'Gender' and 'Birth Year' information.")
 
     df = pd.read_csv(CITY_DATA[city])
     df['Start Time'] = pd.to_datetime(df['Start Time'])

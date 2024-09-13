@@ -139,12 +139,16 @@ def trip_duration_stats(df):
     """
     print('\nCalculating Trip Duration'.center(78, '='))
     start_time = time.time()
-
-    if 'Trip Duration' in df.columns:
-        print('Max Travel Time'.ljust(40, '.'), df['Trip Duration'].max())
-        print('Min Travel Time'.ljust(40, '.'), df['Trip Duration'].min())
-        print('Avg Travel Time'.ljust(40, '.'), df['Trip Duration'].mean())
-        print('Total Travel Time'.ljust(40, '.'), df['Trip Duration'].sum())
+    try:
+        if 'Trip Duration' in df.columns:
+            print('Max Travel Time'.ljust(40, '.'), df['Trip Duration'].max())
+            print('Min Travel Time'.ljust(40, '.'), df['Trip Duration'].min())
+            print('Avg Travel Time'.ljust(40, '.'), df['Trip Duration'].mean())
+            print('Total Travel Time'.ljust(40, '.'), df['Trip Duration'].sum())
+        else:
+            print("Error: 'Trip Duration' column is missing from the dataset.")
+    except Exception as e:
+        print(f"Exception occurred while calculating trip duration: {e}")
 
     print(f"\nThis took {time.time() - start_time:.4f} seconds.")
     print('-'*78)

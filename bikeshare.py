@@ -13,11 +13,12 @@ CITY_DATA = {
 # Spinning text animation class for loading visuals
 class Spinner:
      """
+    here
         Animates a spinning text visual to simulate a loading spinner.
 
         Args:
             string (str): The text message to display during the spin.
-            iterations (int): Number of times the spinner will cycle through the animation.
+            iterations (int): Number of times the spinner will cycle through the animation. here
         """
     def spin(self, string, iterations):
         clear = "\b" * (8 + len(string))

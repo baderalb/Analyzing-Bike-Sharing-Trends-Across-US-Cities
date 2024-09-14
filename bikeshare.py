@@ -140,6 +140,7 @@ def trip_duration_stats(df):
     """
     print('\nCalculating Trip Duration'.center(78, '='))
     start_time = time.time()
+    # add try and cattch here
     try:
         if 'Trip Duration' in df.columns:
             print('Max Travel Time'.ljust(40, '.'), df['Trip Duration'].max())
